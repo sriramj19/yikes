@@ -1,4 +1,4 @@
-# yikes!
+# Yikes!
 
 a [Sails](http://sailsjs.org) application
 

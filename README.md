@@ -10,7 +10,6 @@ Yikes! is a simple chat application based upon the following stack:
 To make use of this wonderful application in your own systems, clone or download this repository:
 
 * Install Node.js and with it NPM Package Manager
-* Run 'npm i sails --g' to install Sails.js
 * Open cmd or terminal in this application directory and run 'npm install'
 * In the same directory run 'sails lift'
 * Now it is all set and you can view the application from the browser at 'http://localhost:1337'

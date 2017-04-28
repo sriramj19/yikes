@@ -1,0 +1,40 @@
+<div ng-controller="LoginController" ng-init="checkCredentials()">
+  <script type="text/javascript">
+    toRegister = function() {
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('registration-form').style.display = 'inline';
+    }
+    toLogin = function() {
+      document.getElementById('login-form').style.display = 'block';
+      document.getElementById('registration-form').style.display = 'none';
+    }
+  </script>
+  <div class="container">
+    <div class="row">
+      <div class="login-form" id="login-form">
+        <form role="login">
+          <div class="text-center">
+            <span class="lead">Get in to </span><a href="" style="color:#ff5964;" class="lead clear-default" ng-click="app.landing()">Yikes!</a>
+            <p>Chat Instantly. Make Friends. For Life.</p>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon"><span class="fa fa-user custom-black"></span></div>
+              <input type="text" name="user_name" id="login_id"  placeholder="Username" ng-model="userName" class="form-control login_id"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon"><span class="fa fa-unlock-alt custom-black"></span></div>
+              <input type="password" name="password" id = "password" ng-model="password" placeholder="Password" class="form-control password"/>
+            </div>
+          </div>
+          <div class="text-center">
+            <button ng-click="login()" class="bttn-fill bttn-sm bttn-danger btton">Sign in</button>
+            <button ng-click="register()" class="bttn-fill bttn-sm bttn-danger btton">Signup</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

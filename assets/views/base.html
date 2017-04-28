@@ -1,0 +1,10 @@
+<div class="ui-base">
+	<nav class="navbar navbar-light sticky-top" id="header">
+		<div class="container">
+			<div class="text-center">
+				<a class="navbar-brand" href="" ng-click="app.landing()"><b>Yikes!</b></a>
+				<a href="" id="logout" class="small" ng-if="app.userDetails" ng-click="app.logout()">(Logout)</a>
+			</div>
+	</nav>
+	<div ui-view />
+</div>

@@ -38,10 +38,12 @@
                 <div class="chat-body clearfix">
                   <div class="header">
                     <strong class="primary-font">{{chat.user}}</strong>
-                    <small class="pull-right text-muted" ng-filter="da">{{chat.createdAt | date : 'hh:mm'}} {{chat.createdAt | date : 'a'}}, {{chat.createdAt | date : 'd'}}'{{chat.createdAt | date : 'MMM'}}</small>
+                    <small class="pull-right text-muted">{{chat.createdAt | date : 'd'}}'{{chat.createdAt | date : 'MMM'}}</small>
+                    <small class="pull-right text-muted hidden-sm-down">{{chat.createdAt | date : 'hh:mm'}} {{chat.createdAt | date : 'a'}},</small>
                   </div>
                   <p>
                     {{chat.message}}
+                    <small class="pull-right text-muted hidden-sm-up">{{chat.createdAt | date : 'hh:mm'}} {{chat.createdAt | date : 'a'}}</small>
                   </p>
                 </div>
               </li>

@@ -7,7 +7,7 @@ angular.module('app')
     $scope.app = {
       name: 'Yikes!',
       version: '1.0.0',
-      apiURL: 'https://yikeschat.herokuapp.com/',
+      apiURL: 'http://localhost:1337/',
       landing: function() {
         if($localStorage.userDetails) {
           $state.go('dashboard')

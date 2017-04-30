@@ -9,34 +9,38 @@ app.controller('LoginController',
 
   /*Login for existing user*/
   $scope.login = function() {
-    LoginService.login($scope.app.apiURL, $scope.userName, $scope.password).then(function(response) {
-      if(response.error) {
-        alert(response.error);
-      }
-      else {
-        if(response) {
-          //Store in local storage for faster login and retrieval of user details
-          $localStorage.userDetails = _.clone(response);
-          $state.go('dashboard');
+    if($scope.userName&&$scope.password) {
+      LoginService.login($scope.app.apiURL, $scope.userName, $scope.password).then(function(response) {
+        if(response.error) {
+          alert(response.error);
         }
-      }
-    });
+        else {
+          if(response) {
+            //Store in local storage for faster login and retrieval of user details
+            $localStorage.userDetails = _.clone(response);
+            $state.go('dashboard');
+          }
+        }
+      });
+    }
   }
 
   /*Register a new user*/
   $scope.register = function() {
-    LoginService.register($scope.app.apiURL, $scope.userName, $scope.password).then(function(response) {
-      if(response.error) {
-        alert(response.error);
-      }
-      else {
-        if(response) {
-          //Store in local storage for faster login and retrieval of user details
-          $localStorage.userDetails = _.clone(response);
-          $state.go('dashboard');
+    if($scope.userName&&$scope.password) {
+      LoginService.register($scope.app.apiURL, $scope.userName, $scope.password).then(function(response) {
+        if(response.error) {
+          alert(response.error);
         }
-      }
-    });
+        else {
+          if(response) {
+            //Store in local storage for faster login and retrieval of user details
+            $localStorage.userDetails = _.clone(response);
+            $state.go('dashboard');
+          }
+        }
+      });
+    }  
   }
 
   /*Checks whether user is already logged in*/

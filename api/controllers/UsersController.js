@@ -110,5 +110,32 @@ module.exports = {
 				return res.status(404).json({error : "User not found"});
 			}
 		});
-	}
+	},
+
+	/**
+	 * @description		Get Current Subscriptions of a User
+	 * @author				Sriram Jayaraman <sriramemailsyou@gmail.com>
+	 *
+	 * @api 					{get} /users/subscriptions/:id Get User Subscriptions
+	 * @apiName 			subscriptions
+	 * @apiGroup 			users
+   * @apiParam			{String} id ID of the user to get subscriptions for
+	 * @apiSuccess 		{Object} returns minimal user details with subscriptions
+	 */
+	 getUserSubscriptions : function(req, res) {
+		 Users.findOne({id : req.param('id')}).exec(function(err, response) {
+			 if(err)	return console.log(err);
+
+			 if(response) {
+				 //Removing sensitive and unwanted data
+				 delete response.password;
+				 delete response.name;
+				 delete response.id;
+				 return res.json(response);
+			 }
+			 else {
+			 	return res.status(404).json({error : "User not found"});
+			 }
+		 });
+	 }
 };

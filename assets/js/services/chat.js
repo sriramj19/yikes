@@ -36,6 +36,14 @@ app.factory('ChatService', function($http) {
       }, function(x) {
         alert(x.data.error)
       });
+    },
+    //API Call for retrieving user's current subscriptions
+    getUserSubscriptions: function(url, userid) {
+      return $http.get(url + 'users/subscriptions/' + userid).then(function(response) {
+        return response.data;
+      }, function(x) {
+        alert('There seems to be a problem, kindly try again later');
+      });
     }
   }
 });

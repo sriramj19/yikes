@@ -47,6 +47,7 @@ module.exports.routes = {
   'POST /users/login'                         : 'UsersController.login',                 //Login registered user
   'POST /users/register'                      : 'UsersController.register',              //Register new user
   'POST /users/subscribe'                     : 'UsersController.addSubscription',       //Subscribe user to chatroom
+  'GET /users/subscriptions/:id'              : 'UsersController.getUserSubscriptions',  //Get user's subscriptions
 
   'POST /createRoom'                          : 'ChatroomController.createChatRoom',     //Create new chatroom
   'GET /rooms'                                : 'ChatroomController.getAllChatRooms',    //Retrieve all chatrooms
